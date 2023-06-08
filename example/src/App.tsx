@@ -4,6 +4,8 @@ import { StyleSheet, View, Text } from 'react-native';
 import { multiply } from 'react-native-midikit';
 
 import Pad from './Pad';
+import InputPicker from './InputPicker';
+import OutputPicker from './OutputPicker';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -18,9 +20,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <View style={styles.row}>
+        <InputPicker />
+        <OutputPicker />
+      </View>
       <View style={styles.instrument}>
         {pads.map((_, i: number) => {
-          return <Pad id={i} />;
+          return <Pad index={i} id={i} />;
         })}
       </View>
     </View>
@@ -31,7 +37,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  row: {
+    flexDirection: 'row',
   },
   box: {
     width: 60,

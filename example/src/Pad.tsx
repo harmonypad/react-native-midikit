@@ -3,6 +3,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 interface PadProps {
   id: number;
+  index: number;
 }
 export default function Pad({ id }: PadProps) {
   const [active, setActive] = React.useState<boolean | undefined>(false);
