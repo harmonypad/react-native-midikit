@@ -25,7 +25,7 @@ export default function App() {
         <InputPicker />
         <OutputPicker />
       </View>
-      <Button title="scan ports"/>
+      <Button title="scan ports" />
       <View style={styles.instrument}>
         {pads.map((_, i: number) => {
           return <Pad index={i} id={i} />;
