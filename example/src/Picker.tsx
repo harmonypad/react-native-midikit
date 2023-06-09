@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 interface Item {
@@ -17,10 +18,9 @@ const GenericPicker: React.FC<GenericPickerProps> = ({
   selectedId,
   onValueChange,
 }) => {
-  console.log('items:', items);
   return (
     <Picker
-      style={{ height: 200, width: 240 }}
+      style={styles.picker}
       selectedValue={selectedId}
       onValueChange={(itemValue) => onValueChange(itemValue as string)}
     >
@@ -32,3 +32,10 @@ const GenericPicker: React.FC<GenericPickerProps> = ({
 };
 
 export default GenericPicker;
+
+const styles = StyleSheet.create({
+  picker: {
+    height: 200,
+    width: 240,
+  },
+});

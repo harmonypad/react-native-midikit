@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { Button, StyleSheet, SafeAreaView, View, Text } from 'react-native';
 import { multiply } from 'react-native-midikit';
 
 import Pad from './Pad';
@@ -19,19 +19,20 @@ export default function App() {
   const pads: number[] = Array.from(Array(PAD_COUNT), (_, i) => i);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>Result: {result}</Text>
       <View style={styles.row}>
         <InputPicker />
         <OutputPicker />
       </View>
+      <Button title="scan ports"/>
       <View style={styles.instrument}>
         {pads.map((_, i: number) => {
           return <Pad index={i} id={i} />;
         })}
       </View>
       <Log />
-    </View>
+    </SafeAreaView>
   );
 }
 
