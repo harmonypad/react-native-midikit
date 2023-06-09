@@ -6,6 +6,7 @@ import { multiply } from 'react-native-midikit';
 import Pad from './Pad';
 import InputPicker from './InputPicker';
 import OutputPicker from './OutputPicker';
+import Log from './Log';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -29,6 +30,7 @@ export default function App() {
           return <Pad index={i} id={i} />;
         })}
       </View>
+      <Log />
     </View>
   );
 }
