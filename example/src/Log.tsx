@@ -27,9 +27,9 @@ const Log: React.FC<LogProps> = () => {
     <View style={styles.container}>
       <Button onPress={handlePress} title="Fetch Fake MIDI Event" />
       <ScrollView style={styles.scrollContainer}>
-        {events.map((event) => {
+        {events.map((event, i) => {
           return (
-            <Text key={event.id} style={styles.eventText}>
+            <Text index={i} key={event.id} style={styles.eventText}>
               {event.text}
             </Text>
           );
