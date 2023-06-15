@@ -11,13 +11,6 @@ const MIDIInputPicker: React.FC = () => {
   const midiInputs = null;
   const [prefferedInputId, setPrefferedInputId] = useState<string>('0');
 
-  // TODO: Fetch and set MIDI inputs
-  // useEffect(() => {
-  //   // Example:
-  //   // const fetchedInputs: MidiInput[] = [...];
-  //   setMidiInputs(fetchedInputs);
-  // }, []);
-
   const inputs = [
     ...(midiInputs || []),
     {
@@ -33,7 +26,6 @@ const MIDIInputPicker: React.FC = () => {
   const onPickerValueChange = (value: string) => {
     setPrefferedInputId(value);
     console.log('current inputId', value);
-    // TODO: Connect to input with uniqueId
   };
 
   return (

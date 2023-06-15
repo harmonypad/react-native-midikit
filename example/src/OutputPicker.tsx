@@ -11,13 +11,6 @@ const MIDIOutputPicker: React.FC = () => {
   const midiOutputs = null;
   const [prefferedOutputId, setPrefferedOutputId] = useState<string>('0');
 
-  // TODO: Fetch and set MIDI outputs
-  // useEffect(() => {
-  //   // Example:
-  //   // const fetchedOutputs: MidiOutput[] = [...];
-  //   setMidiOutputs(fetchedOutputs);
-  // },[]);
-
   const outputs = [
     ...(midiOutputs || []),
     {
@@ -33,7 +26,6 @@ const MIDIOutputPicker: React.FC = () => {
   const onPickerValueChange = (value: string) => {
     setPrefferedOutputId(value);
     console.log('current outputId', value);
-    // TODO: Connect to output with uniqueId
   };
 
   return (
