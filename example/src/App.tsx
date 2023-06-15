@@ -28,7 +28,7 @@ export default function App() {
       <Button title="scan ports" />
       <View style={styles.instrument}>
         {pads.map((_, i: number) => {
-          return <Pad index={i} id={i} />;
+          return <Pad key={i} id={i} />;
         })}
       </View>
       <Log />

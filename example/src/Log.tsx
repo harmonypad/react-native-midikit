@@ -29,7 +29,7 @@ const Log: React.FC<LogProps> = () => {
       <ScrollView style={styles.scrollContainer}>
         {events.map((event, i) => {
           return (
-            <Text index={i} key={event.id} style={styles.eventText}>
+            <Text key={i} style={styles.eventText}>
               {event.text}
             </Text>
           );
