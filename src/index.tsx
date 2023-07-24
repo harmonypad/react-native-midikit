@@ -20,3 +20,11 @@ const Midikit = NativeModules.Midikit
 export function multiply(a: number, b: number): Promise<number> {
   return Midikit.multiply(a, b);
 }
+
+export function send(data: Uint8Array | number[]): void {
+  if (data.length < 3) {
+    console.error('Incorrect length');
+  }
+  console.log("sending")
+  Midikit.sendMidiMessage("id", 1,2,3);
+}
