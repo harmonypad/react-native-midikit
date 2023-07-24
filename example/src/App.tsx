@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button, StyleSheet, SafeAreaView, View, Text } from 'react-native';
-import { multiply } from 'react-native-midikit';
+import { multiply, send } from 'react-native-midikit';
 
 import Pad from './Pad';
 import InputPicker from './InputPicker';
@@ -13,6 +13,8 @@ export default function App() {
 
   React.useEffect(() => {
     multiply(3, 7).then(setResult);
+    send(1,2,3)
+    console.log("hello", send)
   }, []);
 
   const PAD_COUNT = 12;
