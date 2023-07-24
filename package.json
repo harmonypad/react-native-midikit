@@ -1,6 +1,6 @@
 {
   "name": "react-native-midikit",
-  "version": "0.0.0-local.0",
+  "version": "0.0.0-local.01",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
