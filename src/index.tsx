@@ -28,3 +28,23 @@ export function send(data: Uint8Array | number[]): void {
   console.log("sending")
   Midikit.sendMidiMessage("id", 1,2,3);
 }
+
+// export class instead of methods to account for access state
+export class ReactNativeMidiKitAccess {
+  async connect(): Promise<void> {
+    // todo: get MIDIManager reference
+    // await Midikit.start()
+    // Get endpoints
+    const data = await Midikit.start()
+    const inputs = [];
+    const outputs = [];
+    if (!data) {
+      // no endpoints available
+      return null;
+    }
+    return data
+    // todo: parse inputs and outputs
+    // todo: connect to emitter
+    // return some result of connect process (i.e. endpoints)
+  }
+}

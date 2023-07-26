@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button, StyleSheet, SafeAreaView, View, Text } from 'react-native';
-import { multiply, send } from 'react-native-midikit';
+import { multiply, send, ReactNativeMidiKitAccess } from 'react-native-midikit';
 
 import Pad from './Pad';
 import InputPicker from './InputPicker';
@@ -12,9 +12,17 @@ export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
+    // test instantiating midikit class and calling method
+    async function getManager() {
+      const midiKitAccess = new ReactNativeMidiKitAccess();
+      const manager = await midiKitAccess.connect()
+      console.log("manager ", manager )
+    }
+    getManager()
+
+    // test mock native functions
     multiply(3, 7).then(setResult);
     send(1,2,3)
-    console.log("hello", send)
   }, []);
 
   const PAD_COUNT = 12;

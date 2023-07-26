@@ -3,6 +3,12 @@ import Foundation
 @objc(Midikit)
 class Midikit: NSObject {
 
+  @objc(start:withRejecter:)
+  func start(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    print("start")
+    resolve("test")
+  }
+
   @objc(multiply:withB:withResolver:withRejecter:)
   func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
     print("multiply")
